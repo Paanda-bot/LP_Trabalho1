@@ -13,7 +13,7 @@ public class Grupo {
 
         //condição para controlo de estudantes repetidos
         if (e1.getNumero() == e2.getNumero()) {
-            throw new IllegalArgumentException("Grupo inválido: Estudantes repetidos");
+            throw new IllegalArgumentException("Grupo inválido: Estudantes repetidos.");
         }
 
         //condição para que a ordem dos grupos não interfira a sua criação: e1/e2 = e2/e1
@@ -27,6 +27,14 @@ public class Grupo {
         this.e1 = e1;
         this.e2 = e2;
 
+    }
+
+    public Estudante getE1() {
+        return e1;
+    }
+
+    public Estudante getE2() {
+        return e2;
     }
 
 }
