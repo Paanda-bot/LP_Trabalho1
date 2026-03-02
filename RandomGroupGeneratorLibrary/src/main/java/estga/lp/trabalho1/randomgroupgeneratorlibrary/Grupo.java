@@ -2,6 +2,10 @@ package estga.lp.trabalho1.randomgroupgeneratorlibrary;
 
 public class Grupo {
 
+    //contador comum a todos os grupos;
+    private static int contadorGrupo = 0;
+
+    private final int numeroGrupo;
     private final Estudante e1;
     private final Estudante e2;
 
@@ -19,27 +23,29 @@ public class Grupo {
         //condição para que a ordem dos grupos não interfira a sua criação: e1/e2 = e2/e1
 
         if (e2.getNumero() < e1.getNumero()) {
-           Estudante temp = e1;
-           e1 = e2;
-           e2 = temp;
+            Estudante temp = e1;
+            e1 = e2;
+            e2 = temp;
         }
 
         this.e1 = e1;
         this.e2 = e2;
+
+        this.numeroGrupo = ++contadorGrupo;
     }
 
     //método para 2 grupos com os mesmo estudantes, sejam considerados iguais.
     @Override
     public boolean equals(Object obj) {
-        if(this == obj) return true;
-        if(!(obj instanceof Grupo)) return false;
+        if (this == obj) return true;
+        if (!(obj instanceof Grupo)) return false;
 
         Grupo other = (Grupo) obj;
 
         return e1.equals(other.e1) && e2.equals(other.e2);
     }
 
-    // se dois objetos são iguais segundo equals(), então tem de ter obrigatoriamente o mesmo hashCode
+    // se dois objetos são iguais segundo equals(), então têm de ter obrigatoriamente o mesmo hashCode
     @Override
     public int hashCode() {
         return 31 * e1.hashCode() + e2.hashCode();
@@ -48,10 +54,14 @@ public class Grupo {
     public Estudante getE1() {
         return e1;
     }
+
     public Estudante getE2() {
         return e2;
     }
 
+    public int getNumeroGrupo() {
+        return numeroGrupo;
+    }
 }
 
 
