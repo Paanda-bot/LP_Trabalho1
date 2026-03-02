@@ -26,13 +26,28 @@ public class Grupo {
 
         this.e1 = e1;
         this.e2 = e2;
+    }
 
+    //método para 2 grupos com os mesmo estudantes, sejam considerados iguais.
+    @Override
+    public boolean equals(Object obj) {
+        if(this == obj) return true;
+        if(!(obj instanceof Grupo)) return false;
+
+        Grupo other = (Grupo) obj;
+
+        return e1.equals(other.e1) && e2.equals(other.e2);
+    }
+
+    // se dois objetos são iguais segundo equals(), então tem de ter obrigatoriamente o mesmo hashCode
+    @Override
+    public int hashCode() {
+        return 31 * e1.hashCode() + e2.hashCode();
     }
 
     public Estudante getE1() {
         return e1;
     }
-
     public Estudante getE2() {
         return e2;
     }
