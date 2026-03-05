@@ -1,5 +1,7 @@
 package estga.lp.trabalho1.randomgroupgeneratorlibrary;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -22,9 +24,10 @@ public class TesteGerador {
 
         Collection<Grupo> grupos = gerador.gerarGrupos();
 
+        int numero = 1;
         for (Grupo g : grupos) {
             System.out.println(
-                    "Grupo " + g.getNumeroGrupo() + ": "
+                    "Grupo " + numero++ + ": "
                             + g.getE1().getNome() + " [" + g.getE1().getNumero() + "]" + " / " +
                             g.getE2().getNome() + " [" + g.getE2().getNumero() + "]"
             );

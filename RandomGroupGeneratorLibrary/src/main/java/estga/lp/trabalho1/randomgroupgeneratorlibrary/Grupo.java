@@ -2,10 +2,6 @@ package estga.lp.trabalho1.randomgroupgeneratorlibrary;
 
 public class Grupo {
 
-    //contador comum a todos os grupos;
-    private static int contadorGrupo = 0;
-
-    private final int numeroGrupo;
     private final Estudante e1;
     private final Estudante e2;
 
@@ -30,8 +26,6 @@ public class Grupo {
 
         this.e1 = e1;
         this.e2 = e2;
-
-        this.numeroGrupo = ++contadorGrupo;
     }
 
     //método para 2 grupos com os mesmo estudantes, sejam considerados iguais.
@@ -57,10 +51,6 @@ public class Grupo {
 
     public Estudante getE2() {
         return e2;
-    }
-
-    public int getNumeroGrupo() {
-        return numeroGrupo;
     }
 }
 
