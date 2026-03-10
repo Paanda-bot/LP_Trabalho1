@@ -10,19 +10,19 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>25</maven.compiler.source>
-        <maven.compiler.target>25</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <exec.mainClass>estga.lp.trabalho1.app.Main</exec.mainClass>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>local</groupId>
             <artifactId>RandomGroupGeneratorLibrary</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/RandomGroupGeneratorLibrary.jar</systemPath>
+            <systemPath>C:\Users\DELL\Desktop\LP_Trabalhos\LP_Trabalho1\lib\RandomGroupGeneratorLibrary.jar</systemPath>
         </dependency>
 
         <dependency>
@@ -30,9 +30,27 @@
             <artifactId>IODataLibrary</artifactId>
             <version>1.0</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/lib/IODataLibrary-1.0.jar</systemPath>
+            <systemPath>C:\Users\DELL\Desktop\LP_Trabalhos\LP_Trabalho1\lib\IODataLibrary-1.0.jar</systemPath>
         </dependency>
-
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>estga.lp.trabalho1.app.Main</mainClass>
+                    <includePluginDependencies>false</includePluginDependencies>
+                    <classpathScope>compile</classpathScope>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>C:\Users\DELL\Desktop\LP_Trabalhos\LP_Trabalho1\lib\RandomGroupGeneratorLibrary.jar</additionalClasspathElement>
+                        <additionalClasspathElement>C:\Users\DELL\Desktop\LP_Trabalhos\LP_Trabalho1\lib\IODataLibrary-1.0.jar</additionalClasspathElement>
+                    </additionalClasspathElements>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
